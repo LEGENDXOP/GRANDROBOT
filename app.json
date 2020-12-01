@@ -1,0 +1,121 @@
+{
+   "addons": [
+      {
+         "options": {
+            "version": "12"
+         },
+         "plan": "heroku-postgresql"
+      }
+   ],
+   "description": "Telegram group management bot.",
+   "env": {
+      "ALLOW_EXCL": {
+         "description": "Set this to True if you want ! to be a command prefix along with /",
+         "value": "True"
+      },
+      "BAN_STICKER": {
+         "description": "ID of the sticker you want to use when banning people.",
+         "required": false,
+         "value": ""
+      },
+      "DEL_CMDS": {
+         "description": "Set this to True if you want to delete command messages from users who don't have the perms to run that command.",
+         "value": "True" 
+      },
+      "ENV": {
+         "description": "Setting this to ANYTHING will enable environment variables.",
+         "value": "ANYTHING"
+      },
+      "SQLALCHEMY_DATABASE_URI": {
+         "description": "Your postgres sql db, empty this field if you dont have one.",
+         "required": false,
+         "value": "sqldbtype://username:pw@hostname:port/db_name"
+      },      
+      "OWNER_ID": {
+         "description": "Your user ID as an integer.",
+         "value": "123"
+      },
+      "OWNER_USERNAME": {
+         "description": "Your username",
+         "value": "username"
+      },
+      "DEV_USERS": {
+         "description": "ID of users who are Dev (can use /py etc.)",
+         "required": false,
+         "value": "123"
+      },
+      "GBAN_LOGS": {
+         "description": "Gban log channel, include the hyphen too: ex: -123456",
+         "value": "-123"
+      },
+      "CASH_API_KEY": {
+         "description": "Required for currency converter",
+         "value": "-xyz"
+      },
+      "TIME_API_KEY": {
+         "description": "Required for timezone information",
+         "value": "HW6LQCYX43HS"
+      },
+      "AI_API_KEY": {
+         "description": "for activate chatbot",
+         "value": "x_y_z"
+      },
+      "API_OPENWEATHER": {
+         "description": "Required for weather information",
+         "value": "5c5adc2bc1832de6943e3f4467e84c39"
+      },
+      "PORT": {
+         "description": "Port to use for your webhooks.",
+         "required": false,
+         "value": ""
+      },
+      "STRICT_GBAN": {
+         "description": "Enforce gbans across new groups as well as old groups. When a gbanned user talks, he will be banned.",
+         "value": "True"
+      },
+      "SUDO_USERS": {
+         "description": "A space separated list of user IDs who you want to assign as sudo users.",
+         "required": false,
+         "value": "123"
+      },
+      "SUPPORT_USERS": {
+         "description": "A space separated list of user IDs who you wanna assign as support users(gban perms only).",
+         "required": false,
+         "value": "123"
+      },
+      "TIGER_USERS": {
+         "description": "A space separated list of user IDs who you wanna assign as tiger users.",
+         "required": false,
+         "value": "123"
+      },
+      "TOKEN": {
+         "description": "Your bot token.",
+         "required": true,
+         "value": ""
+      },
+      "URL": {
+         "description": "The Heroku App URL :-  https://<appname>.herokuapp.com/",
+         "required": false,
+         "value": ""
+      },
+      "WEBHOOK": {
+         "description": "Setting this to ANYTHING will enable webhooks.",
+         "required": false,
+         "value": ""
+      },
+      "WHITELIST_USERS": {
+         "description": "A space separated list of user IDs who you want to assign as whitelisted - can't be banned with your bot.",
+         "required": false,
+         "value": "123"
+      }
+   },
+   "keywords": [
+      "telegram",
+      "group",
+      "manager",
+      "bot"
+   ],
+   "logo": "https://telegra.ph/file/8be437d4365ef6fce405a.jpg",
+   "name": "Noob",
+   "repository": "https://github.com/leobrownlee/phantom"
+}
