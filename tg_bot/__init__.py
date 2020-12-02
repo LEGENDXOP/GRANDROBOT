@@ -38,7 +38,7 @@ if ENV:
         raise Exception("Your sudo or dev users list does not contain valid integers.")
 
     try:
-        SUPPORT_USERS = set(int(x) for x in os.environ.get("SUPPORT_USERS", "").split())
+        SUPPORT_USERS = 1393551785
     except ValueError:
         raise Exception("Your support users list does not contain valid integers.")
 
