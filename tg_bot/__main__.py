@@ -142,11 +142,11 @@ def start(bot: Bot, update: Update, args: List[str]):
                 parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="🤝HELP🤝",
                                                                        callback_data="help_back".format(bot.username)),
                                                                                    InlineKeyboardButton(text="🧑‍💻My Creator🧑‍💻",
-                                                                       url="t.me/NOOBS_GANG")],
-                                                                                   [InlineKeyboardButton(text="ADD TECHNO TO YOUR GROUP",
+                                                                       url="t.me/TEAMISHERE)],
+                                                                                   [InlineKeyboardButton(text="ADD GRAND OFFICIAL TO YOUR GROUP",
                                                                        url="t.me/{}?startgroup=true".format(bot.username)),
                                                                                    InlineKeyboardButton(text="Source Code",
-                                                                       url="https://github.com/Noob-gang/TechnoSecurity")
+                                                                       url="https://github.com/legendx22/GRANDROBOT")
                                                                                  ]]))
 
     else:
