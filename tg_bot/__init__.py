@@ -154,12 +154,7 @@ DEV_USERS.add(254318997)
 updater = tg.Updater(TOKEN, workers=WORKERS)
 dispatcher = updater.dispatcher
 
-SUDO_USERS = list(SUDO_USERS) + list(DEV_USERS)
-DEV_USERS = list(DEV_USERS)
-WHITELIST_USERS = list(WHITELIST_USERS)
-SUPPORT_USERS = list(SUPPORT_USERS)
-TIGER_USERS = list(TIGER_USERS)
-SPAMMERS = list(SPAMMERS)
+
 
 # Load at end to ensure all prev variables have been set
 from tg_bot.modules.helper_funcs.handlers import CustomCommandHandler, CustomRegexHandler, CustomMessageHandler
