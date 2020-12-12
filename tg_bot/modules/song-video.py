@@ -1,4 +1,4 @@
-# Created by @p_rinc_e
+# Created by @LEGENDX22
 from pathlib import Path
 import asyncio, time, io, math, os, logging, asyncio, shutil, re, subprocess, json
 from re import findall
