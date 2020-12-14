@@ -92,8 +92,8 @@ def new_member(bot: Bot, update: Update, job_queue: JobQueue):
         if should_welc:
 
             # Give the owner a special welcome
-            if new_mem.id == OWNER_ID:
-                update.effective_message.reply_text("OMG. My owner Just Joined. Welcome my respected Owner")
+            if new_mem.id == OWNER_ID
+                update.effective_message.reply_text("YEAH LEGDNDS IS HERE")
                 welcome_log = (f"{html.escape(chat.title)}\n"
                                f"#USER_JOINED\n"
                                f"Bot Owner just joined the chat")
@@ -272,7 +272,7 @@ def left_member(bot: Bot, update: Update):
 
             # Give the owner a special goodbye
             if left_mem.id == OWNER_ID:
-                update.effective_message.reply_text("Oooye, Sed!😣😣 My Owner left this chat..😫😢😭😭")
+                update.effective_message.reply_text("ooo sed legend is gone")
                 return
 
             # Give the devs a special goodbye
