@@ -92,7 +92,7 @@ def new_member(bot: Bot, update: Update, job_queue: JobQueue):
         if should_welc:
 
             # Give the owner a special welcome
-            if new_mem.id == OWNER_ID
+            if new_mem.id == OWNER_ID:
                 update.effective_message.reply_text("YEAH LEGDNDS IS HERE")
                 welcome_log = (f"{html.escape(chat.title)}\n"
                                f"#USER_JOINED\n"
