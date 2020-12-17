@@ -44,7 +44,7 @@ def getsticker(bot: Bot, update: Update):
 
 
 @run_async
-def steal(bot: Bot, update: Update, args: List[str]):
+def kang(bot: Bot, update: Update, args: List[str]):
     msg = update.effective_message
     user = update.effective_user
     packnum = 0
