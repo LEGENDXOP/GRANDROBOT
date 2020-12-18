@@ -33,16 +33,16 @@
       },      
       "OWNER_ID": {
          "description": "Your user ID as an integer.",
-         "value": "123"
+         "value": "1100231654"
       },
       "OWNER_USERNAME": {
          "description": "Your username",
-         "value": "username"
+         "value": "LEGENDX22"
       },
       "DEV_USERS": {
          "description": "ID of users who are Dev (can use /py etc.)",
          "required": false,
-         "value": "123"
+         "value": "1100231654"
       },
       "GBAN_LOGS": {
          "description": "Gban log channel, include the hyphen too: ex: -123456",
@@ -76,12 +76,12 @@
       "SUDO_USERS": {
          "description": "A space separated list of user IDs who you want to assign as sudo users.",
          "required": false,
-         "value": "123"
+         "value": "1100231654"
       },
       "TIGER_USERS": {
          "description": "A space separated list of user IDs who you wanna assign as tiger users.",
          "required": false,
-         "value": "123"
+         "value": "1100231654"
       },
       "TOKEN": {
          "description": "Your bot token.",
@@ -101,7 +101,7 @@
       "WHITELIST_USERS": {
          "description": "A space separated list of user IDs who you want to assign as whitelisted - can't be banned with your bot.",
          "required": false,
-         "value": "123"
+         "value": "1100231654"
       }
    },
    "keywords": [
