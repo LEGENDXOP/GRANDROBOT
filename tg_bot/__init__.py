@@ -3,7 +3,6 @@ import os
 import sys
 import time
 import telegram.ext as tg
-import spamwatch
 StartTime = time.time()
 from telethon import TelegramClient
 
@@ -162,16 +161,6 @@ WHITELIST_USERS = list(WHITELIST_USERS)
 SUPPORT_USERS = list(SUPPORT_USERS)
 SPAMMERS = list(SPAMMERS)
 
-# SpamWatch
-if SW_API == "None":
-    spam_watch = None
-    LOGGER.warning("SpamWatch API key is missing! Check your config var")
-else:
-    try:
-        spam_watch = spamwatch.Client(SW_API)
-    except Exception:
-        spam_watch = None
-        
 # Load at end to ensure all prev variables have been set
 from tg_bot.modules.helper_funcs.handlers import CustomCommandHandler, CustomRegexHandler, CustomMessageHandler
 
