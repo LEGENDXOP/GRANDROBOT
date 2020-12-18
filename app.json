@@ -46,7 +46,7 @@
       },
 "START_IMG": {
          "description": "Image shows when hit /start",
-         "value": "https://telegra.ph/file/511ad504656e712b88235.jpg"    
+         "value": "https://telegra.ph/file/84b2017bc2f3c90f2e61c.jpg"    
       },
       "GBAN_LOGS": {
          "description": "Gban log channel, include the hyphen too: ex: -123456",
