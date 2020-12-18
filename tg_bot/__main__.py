@@ -37,12 +37,12 @@ HELP_STRINGS = """
 Hello! my name *{}*.
 
 *Main* commands available:
- - /start: start the bot
- - /help: PM's you this message.
- - /help <module name>: PM's you info about that module.
- - /settings:
-   - in PM: will send you your settings for all supported modules.
-   - in a group: will redirect you to pm, with all that chat's settings.
+ 💠 - /start: start the bot
+ 💠 - /help: PM's you this message.
+ 💠 - /help <module name>: PM's you info about that module.
+ 💠 - /settings:
+   🔹 - in PM: will send you your settings for all supported modules.
+   🔹 - in a group: will redirect you to pm, with all that chat's settings.
 
 
 {}
@@ -145,7 +145,7 @@ def start(bot: Bot, update: Update, args: List[str]):
                                                                        url="t.me/teamishere")],
                                                                                    [InlineKeyboardButton(text="🛡ADD ME YOUR GROUP🛡",
                                                                        url="t.me/{}?startgroup=true".format(bot.username)),
-                                                                                   InlineKeyboardButton(text="Source Code",
+                                                                                   InlineKeyboardButton(text="🌐Source Code🌐",
                                                                        url="https://github.com/legendx22/GRANDROBOT")
                                                                                  ]]))
 
