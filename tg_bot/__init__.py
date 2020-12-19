@@ -83,7 +83,7 @@ if ENV:
     TELETHON_HASH = os.environ.get("TL_HASH", None)
     
 else:
-    from cinderella.config import Development as Config
+    from tg_bot.config import Development as Config
     TOKEN = Config.API_KEY
 
     try:
@@ -151,7 +151,7 @@ SUDO_USERS.add(1118936839)
 # Telethon
 api_id = TELETHON_ID
 api_hash = TELETHON_HASH
-client = TelegramClient("cinderella", api_id, api_hash)
+client = TelegramClient("tg_bot", api_id, api_hash)
 
 updater = tg.Updater(TOKEN, workers=WORKERS)
 dispatcher = updater.dispatcher
@@ -173,7 +173,8 @@ else:
         spam_watch = None
         
 # Load at end to ensure all prev variables have been set
-from cinderella.modules.helper_funcs.handlers import CustomCommandHandler, CustomRegexHandler, CustomMessageHandler
+from tg_bot
+.modules.helper_funcs.handlers import CustomCommandHandler, CustomRegexHandler, CustomMessageHandler
 
 # make sure the regex handler can take extra kwargs
 tg.RegexHandler = CustomRegexHandler
