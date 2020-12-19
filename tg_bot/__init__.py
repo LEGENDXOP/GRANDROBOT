@@ -85,12 +85,11 @@ else:
     TOKEN = Config.API_KEY
 
     try:
-        OWNER_ID = int(Config.OWNER_ID)
+        
+        
+        OWNER_ID = int(os.environ.get('OWNER_ID', None))
     except ValueError:
-        raise Exception("Your OWNER_ID variable is not a valid integer.")
-
-    MESSAGE_DUMP = Config.MESSAGE_DUMP
-    OWNER_USERNAME = Config.OWNER_USERNAME
+        raise Exception("Your OWNER_ID env variable is not a valid integer.")
 
     try:
         SUDO_USERS = set(int(x) for x in Config.SUDO_USERS or [])
