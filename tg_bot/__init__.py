@@ -28,7 +28,7 @@ if ENV:
     except ValueError:
         raise Exception("Your OWNER_ID variable is not a valid integer.")
 
-    MESSAGE_DUMP = Config.MESSAGE_DUMP
+   
     OWNER_USERNAME = Config.OWNER_USERNAME
 
     try:
