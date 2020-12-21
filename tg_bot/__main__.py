@@ -29,7 +29,7 @@ PM_START_TEXT = """
 **Hello {}, My Name is {}!** 
 I am an **SUPERB**  group management bot.
 You can find the list of available commands with /help.
-
+Special thanks to [NOOBS](https://t.me/NOOBS_GANG) for helping in developing me.
 """
 
 HELP_STRINGS = """
