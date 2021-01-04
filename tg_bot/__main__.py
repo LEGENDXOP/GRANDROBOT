@@ -377,7 +377,7 @@ def settings_button(bot: Bot, update: Update):
             query.message.reply_text(text=text,
                                      parse_mode=ParseMode.MARKDOWN,
                                      reply_markup=InlineKeyboardMarkup(
-                                         [[InlineKeyboardButton(text="Back",
+                                         [[InlineKeyboardButton(text="🔙𝐁𝐚𝐜𝐤🔙",
                                                                 callback_data="stngs_back({})".format(chat_id))]]))
 
         elif prev_match:
