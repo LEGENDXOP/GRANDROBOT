@@ -49,7 +49,7 @@ HELP_STRINGS = """
 𝐀𝐍𝐃 𝐓𝐇𝐄 𝐅𝐎𝐋𝐋𝐎𝐖𝐈𝐍𝐆:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\n𝐀𝐋𝐋 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒 𝐂𝐀𝐍 𝐄𝐈𝐓𝐇𝐄𝐑 𝐁𝐄 𝐔𝐒𝐄𝐃 / 𝐎𝐑 !.\n")
 
-TECHNO_IMG = "https://telegra.ph/file/78ff3aba7f1bce6897e4a.mp4"
+TECHNO_IMG = "https://telegra.ph/file/d81c3ec97934c907f962b.jpg"
 IMPORTED = {}
 MIGRATEABLE = []
 HELPABLE = {}
@@ -150,7 +150,7 @@ def start(bot: Bot, update: Update, args: List[str]):
                                                                                  ]]))
 
     else:
-        update.effective_message.reply_text("𝐼 𝑎𝑚 𝑜𝑛𝑙𝑖𝑛𝑒.☃︎𝑀𝑦𝑠𝑒𝑙𝑓 𝑆𝑤𝑒𝑒𝑡𝑦 𝐴𝑛𝑑 𝑦𝑜𝑢 ?शर्मा मत बता दे🥺 ")
+        update.effective_message.reply_text("𝐇𝐢𝐢 𝐌𝐲𝐬𝐞𝐥𝐟 𝐒𝐰𝐞𝐞𝐭𝐲 & 𝐘𝐨𝐮? 😏भाव मत खा बता भी दे।🥺 "                                          
 
 
 def send_start(bot, update):
