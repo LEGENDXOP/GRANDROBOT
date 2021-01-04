@@ -27,27 +27,27 @@ from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
 **𝐇𝐄𝐋𝐋𝐎..{}, 𝐌𝐲 𝐍𝐚𝐦𝐞 𝐈𝐬 {}!** 
-𝐼 𝑎𝑚 𝑎 **𝐒𝐰𝐞𝐞𝐭𝐞𝐬𝐭🥰**  𝐺𝑟𝑜𝑢𝑜 𝑀𝑎𝑛𝑎𝑔𝑒𝑚𝑒𝑛𝑡 𝐵𝑜𝑡.
-𝑌𝑜𝑢 𝑐𝑎𝑛 𝑓𝑖𝑛𝑑 𝑙𝑖𝑠𝑡 𝑜𝑓 𝑚𝑦 𝑎𝑙𝑙 𝑎𝑣𝑎𝑖𝑙𝑎𝑏𝑙𝑒 𝑐𝑜𝑚𝑚𝑎𝑛𝑑𝑠☞︎︎︎ /help
+𝐌𝐲𝐬𝐞𝐥𝐟  **🥰𝐒𝐖𝐄𝐄𝐓𝐄𝐒𝐓🥰**  𝐆𝐫𝐨𝐮𝐩 𝐌𝐚𝐧𝐚𝐠𝐦𝐞𝐧𝐭 𝐁𝐨𝐭.
+𝐃𝐄𝐕𝐋𝐎𝐏𝐄𝐃 𝐁𝐘 @Mr_Perfect 🤠 𝐌𝐚𝐝𝐞 𝐈𝐧 𝐈𝐧𝐝𝐢𝐚🇮🇳
+𝐀𝐥𝐥 300+😱 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐀𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞 𝐀𝐭 𝐡𝐞𝐫𝐞 ➡️/help
 
 """
 
 HELP_STRINGS = """
 
-𝐻𝑒𝑙𝑙𝑜 𝑀𝑦𝑠𝑒𝑙𝑓 ☞︎︎︎ *{}*.
+𝐇𝐞𝐥𝐥𝐨! 𝐌𝐘 𝐍𝐀𝐌𝐄 𝐈𝐒 *{}*.
 
-*⌨︎𝐌𝐚𝐢𝐧⌨︎* commands available:
- - /start: start the bot
- - /help: PM's you this message.
- - /help <module name>: PM's you info about that module.
+*🚪𝐌𝐀𝐈𝐍 𝐌𝐄𝐍𝐔🚪* 𝐌𝐲 𝐀𝐥𝐥 𝐀𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 ➪:
+ - /start: 𝐓𝐨 𝐒𝐭𝐚𝐭𝐫𝐭 𝐓𝐡𝐞 𝐁𝐨𝐭 🔛
+ - /help: 𝐏𝐌'𝐒 𝐘𝐎𝐔 𝐅𝐎𝐑 𝐓𝐇𝐄𝐒𝐄 𝐌𝐄𝐒𝐒𝐀𝐆𝐄.
+ - /help <module name>: 𝐏𝐌'𝐒 𝐘𝐎𝐔 𝐈𝐍𝐅𝐎 𝐀𝐁𝐎𝐔𝐓 𝐓𝐇𝐀𝐓 𝐌𝐎𝐃𝐔𝐋𝐄.
  - /settings:
-   - in PM: will send you your settings for all supported modules.
-   - in a group: will redirect you to pm, with all that chat's settings.
-
+   - 𝐈𝐍 𝐏𝐌: 𝐖𝐈𝐋𝐋 𝐒𝐄𝐍𝐃 𝐘𝐎𝐔 𝐘𝐎𝐔𝐑 𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒 𝐅𝐎𝐑 𝐀𝐋𝐋 𝐒𝐔𝐏𝐏𝐎𝐑𝐓𝐄𝐃 𝐌𝐎𝐃𝐔𝐋𝐄𝐒.
+   - 𝐈𝐍 𝐆𝐑𝐎𝐔𝐏: 𝐖𝐈𝐋𝐋 𝐑𝐄𝐃𝐈𝐑𝐄𝐂𝐓𝐄𝐃 𝐘𝐎𝐔 𝐓𝐎 𝐏𝐌, 𝐖𝐈𝐓𝐇 𝐀𝐋𝐋 𝐓𝐇𝐀𝐓 𝐂𝐇𝐀𝐓'𝐒 𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒.
 
 {}
-And the following:
-""".format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
+𝐀𝐍𝐃 𝐓𝐇𝐄 𝐅𝐎𝐋𝐋𝐎𝐖𝐈𝐍𝐆:
+""".format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\n𝐀𝐋𝐋 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒 𝐂𝐀𝐍 𝐄𝐈𝐓𝐇𝐄𝐑 𝐁𝐄 𝐔𝐒𝐄𝐃 / 𝐎𝐑 !.\n")
 
 TECHNO_IMG = "https://telegra.ph/file/78ff3aba7f1bce6897e4a.mp4"
 IMPORTED = {}
