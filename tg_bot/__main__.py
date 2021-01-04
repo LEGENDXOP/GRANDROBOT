@@ -26,17 +26,17 @@ from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 
 PM_START_TEXT = """
-**Hello {}, My Name is {}!** 
-I am an **SUPERB**  group management bot.
-You can find the list of available commands with /help.
+**𝐇𝐄𝐋𝐋𝐎..{}, 𝐌𝐲 𝐍𝐚𝐦𝐞 𝐈𝐬 {}!** 
+𝐼 𝑎𝑚 𝑎 **𝐒𝐰𝐞𝐞𝐭𝐞𝐬𝐭🥰**  𝐺𝑟𝑜𝑢𝑜 𝑀𝑎𝑛𝑎𝑔𝑒𝑚𝑒𝑛𝑡 𝐵𝑜𝑡.
+𝑌𝑜𝑢 𝑐𝑎𝑛 𝑓𝑖𝑛𝑑 𝑙𝑖𝑠𝑡 𝑜𝑓 𝑚𝑦 𝑎𝑙𝑙 𝑎𝑣𝑎𝑖𝑙𝑎𝑏𝑙𝑒 𝑐𝑜𝑚𝑚𝑎𝑛𝑑𝑠☞︎︎︎ /help
 
 """
 
 HELP_STRINGS = """
 
-Hello! my name *{}*.
+𝐻𝑒𝑙𝑙𝑜 𝑀𝑦𝑠𝑒𝑙𝑓 ☞︎︎︎ *{}*.
 
-*Main* commands available:
+*⌨︎𝐌𝐚𝐢𝐧⌨︎* commands available:
  - /start: start the bot
  - /help: PM's you this message.
  - /help <module name>: PM's you info about that module.
@@ -49,7 +49,7 @@ Hello! my name *{}*.
 And the following:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-TECHNO_IMG = "https://telegra.ph/file/84b2017bc2f3c90f2e61c.jpg"
+TECHNO_IMG = "https://telegra.ph/file/78ff3aba7f1bce6897e4a.mp4"
 IMPORTED = {}
 MIGRATEABLE = []
 HELPABLE = {}
@@ -139,18 +139,18 @@ def start(bot: Bot, update: Update, args: List[str]):
             update.effective_message.reply_photo(
                 TECHNO_IMG,
                 PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
-                parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="🤝HELP🤝",
+                parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="🤝🏻𝐇𝐄𝐋𝐏🤝🏻",
                                                                        callback_data="help_back".format(bot.username)),
-                                                                                   InlineKeyboardButton(text="🧑‍💻My Creator🧑‍💻",
-                                                                       url="t.me/teamishere")],
-                                                                                   [InlineKeyboardButton(text="ADD GRAND OFFICIAL TO YOUR GROUP",
+                                                                                   InlineKeyboardButton(text="📱💻𝐌𝐲 𝐂𝐫𝐞𝐚𝐭𝐨𝐫💻📲",
+                                                                       url="https://t.me/Mr_Purushottam")],
+                                                                                   [InlineKeyboardButton(text="𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩",
                                                                        url="t.me/{}?startgroup=true".format(bot.username)),
                                                                                    InlineKeyboardButton(text="Source Code",
                                                                        url="https://github.com/legendx22/GRANDROBOT")
                                                                                  ]]))
 
     else:
-        update.effective_message.reply_text("Yuss, I am Already ONline")
+        update.effective_message.reply_text("𝐼 𝑎𝑚 𝑜𝑛𝑙𝑖𝑛𝑒.☃︎𝑀𝑦𝑠𝑒𝑙𝑓 𝑆𝑤𝑒𝑒𝑡𝑦 𝐴𝑛𝑑 𝑦𝑜𝑢 ?शर्मा मत बता दे🥺 ")
 
 
 def send_start(bot, update):
@@ -206,7 +206,7 @@ def help_button(bot: Bot, update: Update):
             query.message.reply_text(text=text,
                                      parse_mode=ParseMode.MARKDOWN,
                                      reply_markup=InlineKeyboardMarkup(
-                                         [[InlineKeyboardButton(text="Back", callback_data="help_back")]]))
+                                         [[InlineKeyboardButton(text="🔙𝐁𝐚𝐜𝐤🔙", callback_data="help_back")]]))
 
         elif prev_match:
             curr_page = int(prev_match.group(1))
@@ -251,7 +251,7 @@ def get_help(bot: Bot, update: Update):
 
         update.effective_message.reply_text("Contact me in Direct Message to get the help.",
                                             reply_markup=InlineKeyboardMarkup(
-                                                [[InlineKeyboardButton(text="HELP",
+                                                [[InlineKeyboardButton(text="🤝🏻𝐇𝐄𝐋𝐏🤝🏻",
                                                                        url="t.me/{}?start=help".format(
                                                                            bot.username))]]))
         return
@@ -260,7 +260,7 @@ def get_help(bot: Bot, update: Update):
         module = args[1].lower()
         text = "Here is the available help for the *{}* module:\n".format(HELPABLE[module].__mod_name__) \
                + HELPABLE[module].__help__
-        send_help(chat.id, text, InlineKeyboardMarkup([[InlineKeyboardButton(text="BACK", callback_data="help_back")]]))
+        send_help(chat.id, text, InlineKeyboardMarkup([[InlineKeyboardButton(text="🔙𝐁𝐚𝐜𝐤🔙", callback_data="help_back")]]))
 
     else:
         send_help(chat.id, HELP_STRINGS)
