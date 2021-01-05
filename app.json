@@ -7,7 +7,7 @@
          "plan": "heroku-postgresql"
       }
    ],
-   "description": "Telegram group management bot.",
+   "description": "𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐚𝐦 𝐆𝐫𝐨𝐮𝐩 𝐌𝐚𝐧𝐚𝐠𝐦𝐞𝐧𝐭 𝐁𝐨𝐭.",
    "env": {
       "ALLOW_EXCL": {
          "description": "Set this to True if you want ! to be a command prefix along with /",
@@ -46,7 +46,7 @@
       },
 "GRAND_IMG": {
          "description": "Image shows when hit /start",
-         "value": "https://telegra.ph/file/84b2017bc2f3c90f2e61c.jpg"    
+         "value": "https://telegra.ph/file/63c81621a850937ca6f09.jpg"    
       },
       "GBAN_LOGS": {
          "description": "Gban log channel, include the hyphen too: ex: -123456",
@@ -114,7 +114,7 @@
       "manager",
       "bot"
    ],
-   "logo": "https://telegra.ph/file/84b2017bc2f3c90f2e61c.jpg",
+   "logo": "",
    "name": "GRAND OFFICIAL",
-   "repository": "https://github.com/legendx22/GRANDROBOT"
+   "repository": "https://github.com/MR-PERFECT-2/GRANDROBOT/.
 }
