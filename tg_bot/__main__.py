@@ -49,7 +49,7 @@ HELP_STRINGS = """
 𝐀𝐍𝐃 𝐓𝐇𝐄 𝐅𝐎𝐋𝐋𝐎𝐖𝐈𝐍𝐆:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\n𝐀𝐋𝐋 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒 𝐂𝐀𝐍 𝐄𝐈𝐓𝐇𝐄𝐑 𝐁𝐄 𝐔𝐒𝐄𝐃 / 𝐎𝐑 !.\n")
 
-TECHNO_IMG = "https://telegra.ph/file/d81c3ec97934c907f962b.jpg"
+TECHNO_IMG = "https://telegra.ph/file/63c81621a850937ca6f09.jpg"
 IMPORTED = {}
 MIGRATEABLE = []
 HELPABLE = {}
