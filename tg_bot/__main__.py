@@ -26,30 +26,30 @@ from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 
 PM_START_TEXT = """
-**Hello {}, My Name is {}!** 
-I am an **SUPERB**  group management bot.
-You can find the list of available commands with /help.
+**𝐇𝐄𝐋𝐋𝐎 𝐌𝐫{}, 𝐌𝐲𝐬𝐞𝐥𝐟{}!** 
+𝐈 𝐀𝐦 𝐀𝐧 **𝐏𝐄𝐑𝐅𝐄𝐂𝐓**  𝐆𝐫𝐨𝐮𝐩 𝐌𝐚𝐧𝐚𝐠𝐦𝐞𝐧𝐭 𝐁𝐨𝐭 𝐈 𝐜𝐚𝐧 𝐇𝐚𝐧𝐝𝐥𝐞 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩 𝐒𝐞𝐜𝐮𝐫𝐞𝐥𝐲.
+You can 𝐘𝐨𝐮 𝐂𝐚𝐧 𝐟𝐢𝐧𝐝 𝐌𝐲 𝐚𝐥𝐥 300+😱𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐁𝐲 𝐓𝐡𝐞𝐬𝐞 𝐓𝐫𝐢𝐠𝐠𝐞𝐫 ➡️ /help.
 
 """
 
 HELP_STRINGS = """
 
-Hello! my name *{}*.
-
-*Main* commands available:
- - /start: start the bot
- - /help: PM's you this message.
- - /help <module name>: PM's you info about that module.
+𝐇𝐄𝐋𝐋𝐎 !𝐌𝐲𝐬𝐞𝐥𝐟 🥰*{}*.
+𝐃𝐞𝐜𝐨𝐝𝐞𝐝 𝐁𝐲 ➪ @Mr_Perfect .
+*𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐀𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞 𝐈𝐧 𝐌𝐚𝐢𝐧 𝐌𝐞𝐧𝐮*:
+ - /start: 𝐓𝐨 𝐚𝐜𝐭𝐢𝐯𝐚𝐭𝐞 𝐓𝐡𝐞 𝐛𝐨𝐭
+ - /help: 𝐏𝐌'𝐒 𝐘𝐨𝐮 𝐓𝐡𝐞𝐬𝐞 𝐌𝐞𝐬𝐬𝐚𝐠𝐞 .
+ - /help <𝐦𝐨𝐝𝐮𝐥𝐞 𝐧𝐚𝐦𝐞>: 𝐏𝐌'𝐒 𝐘𝐨𝐮 𝐀𝐛𝐨𝐮𝐭 𝐓𝐡𝐚𝐭 𝐌𝐨𝐝𝐮𝐥.
  - /settings:
-   - in PM: will send you your settings for all supported modules.
-   - in a group: will redirect you to pm, with all that chat's settings.
+   - 𝐈𝐧 𝐏𝐌: 𝐖𝐢𝐥𝐥 𝐒𝐞𝐧𝐝 𝐘𝐨𝐮 𝐘𝐨𝐮𝐫 𝐒𝐞𝐭𝐭𝐢𝐧𝐠𝐬 𝐅𝐨𝐫 𝐀𝐥𝐥 𝐒𝐮𝐩𝐩𝐨𝐫𝐭𝐞𝐝 𝐌𝐨𝐝𝐮𝐥𝐞𝐬.
+   - 𝐈𝐧 𝐀 𝐠𝐫𝐨𝐮𝐩: 𝐖𝐢𝐥𝐥 𝐑𝐞𝐝𝐢𝐫𝐞𝐜𝐭 𝐘𝐨𝐮 𝐓𝐨 𝐏𝐌,𝐖𝐢𝐭𝐡 𝐀𝐥𝐥 𝐓𝐡𝐚𝐭 𝐂𝐡𝐚𝐭'𝐬 𝐒𝐞𝐭𝐭𝐢𝐧𝐠𝐬.
 
 
 {}
-And the following:
-""".format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
+𝐀𝐧𝐝 𝐓𝐡𝐞 𝐅𝐨𝐥𝐥𝐨𝐰𝐢𝐧𝐠:
+""".format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\n𝐀𝐥𝐥 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐂𝐚𝐧 𝐄𝐢𝐭𝐡𝐞𝐫 𝐁𝐞 𝐔𝐬𝐞𝐝 𝐖𝐢𝐭𝐡  / 𝐎𝐫 !.\n")
 
-TECHNO_IMG = "https://telegra.ph/file/84b2017bc2f3c90f2e61c.jpg"
+TECHNO_IMG = "https://telegra.ph/file/4efe0163a2d751880251c.jpg"
 IMPORTED = {}
 MIGRATEABLE = []
 HELPABLE = {}
@@ -139,18 +139,18 @@ def start(bot: Bot, update: Update, args: List[str]):
             update.effective_message.reply_photo(
                 TECHNO_IMG,
                 PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
-                parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="🤝HELP🤝",
+                parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="🤝🏻𝐇𝐄𝐋𝐏🤝🏻",
                                                                        callback_data="help_back".format(bot.username)),
-                                                                                   InlineKeyboardButton(text="🧑‍💻My Creator🧑‍💻",
-                                                                       url="t.me/teamishere")],
-                                                                                   [InlineKeyboardButton(text="ADD GRAND OFFICIAL TO YOUR GROUP",
+                                                                                   InlineKeyboardButton(text="👩🏻‍💻𝐃𝐄𝐕𝐋𝐎𝐏𝐄𝐑 📞👩🏻‍💻",
+                                                                       url="t.me/Mr_Purushottam")],
+                                                                                   [InlineKeyboardButton(text="⤴️𝐓𝐚𝐤𝐞 𝐌𝐞 𝐭𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩",
                                                                        url="t.me/{}?startgroup=true".format(bot.username)),
-                                                                                   InlineKeyboardButton(text="Source Code",
-                                                                       url="https://github.com/legendx22/GRANDROBOT")
+                                                                                   InlineKeyboardButton(text="𝐒𝐚𝐮𝐫𝐜𝐞 𝐂𝐨𝐝𝐞",
+                                                                       url="https://github.com/i392pm/GRANDROBOT")
                                                                                  ]]))
 
     else:
-        update.effective_message.reply_text("Yuss, I am Already ONline")
+        update.effective_message.reply_text("༆𝐇𝐞𝐥𝐥𝐨!!,*𝐈 𝐚𝐦 𝐎𝐧𝐥𝐢𝐧𝐞* 𝐌𝐲𝐬𝐞𝐥𝐟 ༆𝐒𝐰𝐞𝐞𝐭𝐲᯾ 𝐀𝐧𝐝 𝐘𝐨𝐮 ? 𓅰 अब बता भी दे शर्माओ मत😁😏")
 
 
 def send_start(bot, update):
