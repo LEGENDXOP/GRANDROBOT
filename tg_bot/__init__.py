@@ -142,14 +142,12 @@ else:
     
 
 SUDO_USERS.add(OWNER_ID)
+#example of tg_id you edit this else your bot is crashes
 SUDO_USERS.add(1100231654)
 
 DEV_USERS.add(OWNER_ID)
+#example of tg_id you edit this else your bot is crashed
 DEV_USERS.add(1100231654)
-SUPPORT_USERS.add(1100231654)
-WHITELIST_USERS.add(1100231654)
-
-TIGER_USERS.add(1100231654)
 
 updater = tg.Updater(TOKEN, workers=WORKERS)
 dispatcher = updater.dispatcher
