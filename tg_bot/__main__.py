@@ -27,8 +27,9 @@ from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
 **Hello {}, My Name is {}!** 
-I am an **SUPERB**  group management bot.
+I am an group management bot
 You can find the list of available commands with /help.
+Join my official Channel
 
 """
 
@@ -139,14 +140,14 @@ def start(bot: Bot, update: Update, args: List[str]):
             update.effective_message.reply_photo(
                 TECHNO_IMG,
                 PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
-                parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="🤝HELP🤝",
+                parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Help",
                                                                        callback_data="help_back".format(bot.username)),
-                                                                                   InlineKeyboardButton(text="🧑‍💻My Creator🧑‍💻",
-                                                                       url="t.me/teamishere")],
-                                                                                   [InlineKeyboardButton(text="ADD GRAND OFFICIAL TO YOUR GROUP",
-                                                                       url="t.me/{}?startgroup=true".format(bot.username)),
-                                                                                   InlineKeyboardButton(text="Source Code",
-                                                                       url="https://github.com/legendx22/GRANDROBOT")
+                                                                                   InlineKeyboardButton(text="My Owner",
+                                                                       url="t.me/Xsbtechz")],
+                                                                                   [InlineKeyboardButton(text="Click Here to Add Me in ur group",
+                                                                       url="t.me/telewebhelpbot?startgroup=true".format(bot.username)),
+                                                                                   InlineKeyboardButton(text="Join Our Channel",
+                                                                       url="t.me/sbtechz")
                                                                                  ]]))
 
     else:
