@@ -27,8 +27,8 @@ from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
 **Hello {}, My Name is {}!** 
-I am cutest group management bot.
-You can find the list of available commands with /help.
+I am poerfull and cutest pokemon group management bot.
+Agar mere command check karne hai toh /help likho.
 
 """
 
@@ -145,12 +145,9 @@ def start(bot: Bot, update: Update, args: List[str]):
                                                                        url="t.me/mr_godfather9")],
                                                                                    [InlineKeyboardButton(text="ADD pikachu  TO YOUR GROUP",
                                                                        url="t.me/{}?startgroup=true".format(bot.username)),
-                                                                                   InlineKeyboardButton(text="Source Code",
-                                                                       url="https://github.com/majid-nex/pikachu-bot")
-                                                                                 ]]))
 
     else:
-        update.effective_message.reply_text("zinda hu mai bol kya kaam hai")
+        update.effective_message.reply_text("zinda hu bol kya kaam hai")
 
 
 def send_start(bot, update):
