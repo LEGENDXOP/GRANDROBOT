@@ -147,7 +147,7 @@ def start(bot: Bot, update: Update, args: List[str]):
                                                                        url="t.me/{}?startgroup=true".format(bot.username)),
 
     else:
-        update.effective_message.reply_text("zinda hu bol kya kaam hai")
+        update.effective_message.reply_text("Kya hua be")
 
 
 def send_start(bot, update):
