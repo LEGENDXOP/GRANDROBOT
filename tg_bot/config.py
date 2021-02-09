@@ -14,7 +14,7 @@ class Config(object):
     # REQUIRED
     API_KEY = "--"
     OWNER_ID = "Ha Ha"  # If you dont know, run the bot and do /id in your private chat with it
-    OWNER_USERNAME = "legendx22"
+    OWNER_USERNAME = "Alpha_402"
 
     # RECOMMENDED
     SQLALCHEMY_DATABASE_URI = 'sqldbtype://username:pw@hostname:port/db_name'  # needed for any database modules
@@ -38,11 +38,11 @@ class Config(object):
     STRICT_GMUTE = True
     WORKERS = 8  # Number of subthreads to use. Set as number of threads your processor uses
     BAN_STICKER = 'CAADAgADOwADPPEcAXkko5EB3YGYAg'  # banhammer marie sticker
-    ALLOW_EXCL = False  # Allow ! commands as well as /
+    ALLOW_EXCL = True  # Allow ! commands as well as /
     CASH_API_KEY = None # Get one from https://www.alphavantage.co/support/#api-key
     TIME_API_KEY = None # Get one from https://timezonedb.com/register
     API_OPENWEATHER = False #Get API_OPENWEATHER FROM OFFICAL SITE https://da.gd/VAW3
-    AI_API_KEY = None # Coffeehouse chatbot api key, get one from https://coffeehouse.intellivoid.info/
+    AI_API_KEY = 'awoo'  #For chatbot, get one from https://coffeehouse.intellivoid.net/dashboard
     WALL_API = None # Get one from https://wall.alphacoders.com/api.php
 
 
