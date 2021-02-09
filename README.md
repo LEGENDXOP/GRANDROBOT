@@ -8,3 +8,6 @@ Credits - [☆α✬一═デ︻ ѕαтуαנєєт ︻デ═一✬α☆](https:/
 
 # TELEGRAM
 Check me on [TELEGRAM](https://t.me/ultramanagerbot)
+
+# JOIN 
+[POKEMON MASTERS](https://t.me/pokes282)
