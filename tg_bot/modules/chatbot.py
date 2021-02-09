@@ -1,71 +1,99 @@
+import html
 # AI module using Intellivoid's Coffeehouse API by @TheRealPhoenix
-from time import time, sleep
+from time import sleep, time
 
-from coffeehouse.lydia import LydiaAI
+import SaitamaRobot.modules.sql.chatbot_sql as sql
 from coffeehouse.api import API
 from coffeehouse.exception import CoffeeHouseError as CFError
-
-from telegram import Message, Chat, User, Update, Bot
-from telegram.ext import CommandHandler, MessageHandler, Filters, run_async
-
-from tg_bot import dispatcher, AI_API_KEY, OWNER_ID
-import tg_bot.modules.sql.chatbot_sql as sql
-from tg_bot.modules.helper_funcs.filters import CustomFilters
-
+from coffeehouse.lydia import LydiaAI
+from SaitamaRobot import AI_API_KEY, OWNER_ID, SUPPORT_CHAT, dispatcher
+from SaitamaRobot.modules.helper_funcs.chat_status import user_admin
+from SaitamaRobot.modules.helper_funcs.filters import CustomFilters
+from SaitamaRobot.modules.log_channel import gloggable
+from telegram import Update
+from telegram.error import BadRequest, RetryAfter, Unauthorized
+from telegram.ext import (CallbackContext, CommandHandler, Filters,
+                          MessageHandler, run_async)
+from telegram.utils.helpers import mention_html
 
 CoffeeHouseAPI = API(AI_API_KEY)
 api_client = LydiaAI(CoffeeHouseAPI)
 
 
 @run_async
-def add_chat(bot: Bot, update: Update):
+@user_admin
+@gloggable
+def add_chat(update: Update, context: CallbackContext):
     global api_client
-    chat_id = update.effective_chat.id
+    chat = update.effective_chat
     msg = update.effective_message
-    is_chat = sql.is_chat(chat_id)
+    user = update.effective_user
+    is_chat = sql.is_chat(chat.id)
+    if chat.type == "private":
+        msg.reply_text("Sir , currently AI is available in groups only 😅.")
+        return
+
     if not is_chat:
         ses = api_client.create_session()
         ses_id = str(ses.id)
         expires = str(ses.expires)
-        sql.set_ses(chat_id, ses_id, expires)
-        msg.reply_text("AI successfully enabled for this chat!")
+        sql.set_ses(chat.id, ses_id, expires)
+        msg.reply_text("AI chalu ho gaya , chalo baate karna shuru karo!😁")
+        message = (
+            f"<b>{html.escape(chat.title)}:</b>\n"
+            f"#AI_ENABLED\n"
+            f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+        )
+        return message
     else:
-        msg.reply_text("AI is already enabled for this chat!")
-        
-        
+        msg.reply_text("Mai yaha pehele se hi baat kar sakta hun sar.😑 (AI already enabled here sar)")
+        return ""
+
+
 @run_async
-def remove_chat(bot: Bot, update: Update):
+@user_admin
+@gloggable
+def remove_chat(update: Update, context: CallbackContext):
     msg = update.effective_message
-    chat_id = update.effective_chat.id
-    is_chat = sql.is_chat(chat_id)
+    chat = update.effective_chat
+    user = update.effective_user
+    is_chat = sql.is_chat(chat.id)
     if not is_chat:
-        msg.reply_text("AI isn't enabled here in the first place!")
+        msg.reply_text("Pehele AI chalu to kar band karne ke liye😅.")
+        return ""
     else:
-        sql.rem_chat(chat_id)
-        msg.reply_text("AI disabled successfully!")
-        
-        
-def check_message(bot: Bot, message):
+        sql.rem_chat(chat.id)
+        msg.reply_text("Han OK band kardiya maine baat karna 😭")
+        message = (
+            f"<b>{html.escape(chat.title)}:</b>\n"
+            f"#AI_DISABLED\n"
+            f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+        )
+        return message
+
+
+def check_message(context: CallbackContext, message):
     reply_msg = message.reply_to_message
-    if message.text.lower() == "saitama":
+    if message.text.lower() == "UltraManager":
         return True
     if reply_msg:
-        if reply_msg.from_user.id == bot.get_me().id:
+        if reply_msg.from_user.id == context.bot.get_me().id:
             return True
     else:
         return False
-                
-        
+
+
 @run_async
-def chatbot(bot: Bot, update: Update):
+def chatbot(update: Update, context: CallbackContext):
     global api_client
     msg = update.effective_message
     chat_id = update.effective_chat.id
     is_chat = sql.is_chat(chat_id)
+    bot = context.bot
     if not is_chat:
         return
     if msg.text and not msg.document:
-        if not check_message(bot, msg):
+        if not check_message(context, msg):
             return
         sesh, exp = sql.get_ses(chat_id)
         query = msg.text
@@ -84,25 +112,57 @@ def chatbot(bot: Bot, update: Update):
             sleep(0.3)
             msg.reply_text(rep, timeout=60)
         except CFError as e:
-            bot.send_message(OWNER_ID, f"Chatbot error: {e} occurred in {chat_id}!")
-                    
+            pass
+            #bot.send_message(OWNER_ID,
+            #                 f"Chatbot error: {e} occurred in {chat_id}!")
 
-__mod_name__ = "CHAT BOT"
 
-__help__ = """
+@run_async
+def list_chatbot_chats(update: Update, context: CallbackContext):
+    chats = sql.get_all_chats()
+    text = "<b>AI-Enabled Chats</b>\n"
+    for chat in chats:
+        try:
+            x = context.bot.get_chat(int(*chat))
+            name = x.title if x.title else x.first_name
+            text += f"• <code>{name}</code>\n"
+        except BadRequest:
+            sql.rem_chat(*chat)
+        except Unauthorized:
+            sql.rem_chat(*chat)
+        except RetryAfter as e:
+            sleep(e.retry_after)
+    update.effective_message.reply_text(text, parse_mode="HTML")
 
-Powered by CoffeeHouse (https://coffeehouse.intellivoid.net/) from @Intellivoid
 
- - /addchat : Enables Chatbot mode in the chat.
- - /rmchat  : Disables Chatbot mode in the chat.
+__help__ = f"""
+Chatbot utilizes the CoffeeHouse API and allows Saitama to talk and provides a more interactive group chat experience.
+
+*Commands:* 
+*Admins only:*
+ • `/addchat`*:* Enables Chatbot mode in the chat.
+ • `/rmchat`*:* Disables Chatbot mode in the chat.
+
+*Powered by CoffeeHouse* (https://coffeehouse.intellivoid.net/) from @Intellivoid
 """
-                  
-ADD_CHAT_HANDLER = CommandHandler("addchat", add_chat, filters=CustomFilters.dev_filter)
-REMOVE_CHAT_HANDLER = CommandHandler("rmchat", remove_chat, filters=CustomFilters.dev_filter)
-CHATBOT_HANDLER = MessageHandler(Filters.text & (~Filters.regex(r"^#[^\s]+") & ~Filters.regex(r"^!")
-                                  & ~Filters.regex(r"^s\/")), chatbot)
+
+ADD_CHAT_HANDLER = CommandHandler("addchat", add_chat)
+REMOVE_CHAT_HANDLER = CommandHandler("rmchat", remove_chat)
+CHATBOT_HANDLER = MessageHandler(
+    Filters.text & (~Filters.regex(r"^#[^\s]+") & ~Filters.regex(r"^!")
+                    & ~Filters.regex(r"^\/")), chatbot)
+LIST_CB_CHATS_HANDLER = CommandHandler(
+    "listaichats", list_chatbot_chats, filters=CustomFilters.dev_filter)
 # Filters for ignoring #note messages, !commands and sed.
 
 dispatcher.add_handler(ADD_CHAT_HANDLER)
 dispatcher.add_handler(REMOVE_CHAT_HANDLER)
 dispatcher.add_handler(CHATBOT_HANDLER)
+dispatcher.add_handler(LIST_CB_CHATS_HANDLER)
+
+__mod_name__ = "Chatbot"
+__command_list__ = ["addchat", "rmchat", "listaichats"]
+__handlers__ = [
+    ADD_CHAT_HANDLER, REMOVE_CHAT_HANDLER, CHATBOT_HANDLER,
+    LIST_CB_CHATS_HANDLER
+]
