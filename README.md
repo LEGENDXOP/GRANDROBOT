@@ -1,9 +1,8 @@
-# GRAND OFFICIAL
+# ULTRA MANAGER
 
-DEPLOY HERE - [GRAND OFFICIAL](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Flegendx22%2FGRANDROBOT&template=https%3A%2F%2Fgithub.com%2Flegendx22%2FGRANDROBOT)
+DEPLOY HERE - [ULTRA MANAGER](https://github.com/Techno212/GRANDROBOT)
 [.](https://heroku.com/deploy)
-Credits - [LEGEND X](https://t.me/legendx22)
+Credits - [☆α✬一═デ︻ ѕαтуαנєєт ︻デ═一✬α☆](https://t.me/Alpha_402)
 
 # TELEGRAM
-Check me on [TELEGRAM](https://t.me/grand50_bot)
-# TOTORIAL [OFFICIAL VIDEO](https://youtu.be/JK9cLTDZUR0)
+Check me on [TELEGRAM](https://t.me/ultramanagerbot)
