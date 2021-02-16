@@ -6,4 +6,4 @@ Credits - [LEGEND X](https://t.me/legendx22)
 
 # TELEGRAM
 Check me on [TELEGRAM](https://t.me/grand50_bot)
-# TOTORIAL [OFFICIAL VIDEO](https://youtu.be/JK9cLTDZUR0)
+# TUTORIAL [OFFICIAL VIDEO](https://youtu.be/JK9cLTDZUR0)
