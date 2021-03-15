@@ -10,7 +10,7 @@ Check me on [TELEGRAM](https://t.me/grand50_bot)
 
 <details>
 <summary> CREDITS </summary>
-# LEGEND X
-# PROBOY X
-# TEAMLEGEND
+<h1> LEGEND X </h1>
+<h1> PROBOY X </h1>
+<h1> TEAMLEGEND </h1>
 </details>
