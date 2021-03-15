@@ -7,3 +7,10 @@ Credits - [LEGEND X](https://t.me/legendx22)
 # TELEGRAM
 Check me on [TELEGRAM](https://t.me/grand50_bot)
 # TUTORIAL [OFFICIAL VIDEO](https://youtu.be/JK9cLTDZUR0)
+
+<details>
+<summary> CREDITS </summary>
+# LEGEND X
+# PROBOY X
+# TEAMLEGEND
+</details>
