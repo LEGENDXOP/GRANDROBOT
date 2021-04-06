@@ -144,7 +144,7 @@ def start(bot: Bot, update: Update, args: List[str]):
                                                                                    InlineKeyboardButton(text="🧑‍💻My Creator🧑‍💻",
                                                                        url="t.me/Mr10Cracker")],
                                                                                    [InlineKeyboardButton(text="ADD Lisa😘 TO YOUR GROUP TO FEEL THE LOVE😍😍",
-                                                                       url="t.me/{}?startgroup=true".format(bot.username))
+                                                                       url="t.me/{}?startgroup=true".format(bot.username))]]))
 
     else:
         update.effective_message.reply_text("Baby, I am perfectly alright😘, Just Take a Chill 💊  ")
