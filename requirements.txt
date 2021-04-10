@@ -1,4 +1,5 @@
 future
+LEGENDX
 emoji
 beautifulsoup4
 requests
