@@ -1,5 +1,8 @@
 future
 LEGENDX
+dnspython
+pymongo
+telethon
 emoji
 beautifulsoup4
 requests
