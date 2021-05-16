@@ -513,9 +513,10 @@ def main():
         updater.start_polling(timeout=15, read_latency=4)
 
     updater.idle()
+    bot.run_until_disconnected()
 
-bot.start(bot_token=TOKEN)
+
 if __name__ == '__main__':
     LOGGER.info("Successfully loaded modules: " + str(ALL_MODULES))
     main()
-    bot.run_until_disconnected()
+    bot.start(bot_token=TOKEN)
