@@ -12,6 +12,7 @@ async def start (event):
   else:
     pass
 @bot.on(events.NewMessage(pattern="/allchats"))
+async def chats(event):
   if event.sender_id != OWNER_ID:
     return
   k = all_users()
