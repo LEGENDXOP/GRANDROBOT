@@ -21,6 +21,6 @@ async def chats(event):
     try:
       X = await bot.get_entity(x)
       f += f'\nNAME: {X.first_name or X.title} USERNAME: {X.username or None}\n'
-     except:
+    except:
        pass
   await event.reply(str(f))
