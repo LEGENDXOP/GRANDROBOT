@@ -1,4 +1,4 @@
-from .import X as mongo
+from .import db as mongo
 data = mongo["USERS"]
 def new_user(id):
   k = data.find_one({"_id": "LEGENDX22"})
