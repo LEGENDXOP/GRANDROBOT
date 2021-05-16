@@ -21,7 +21,7 @@ async def pro(event):
    pass
 @bot.on(events.NewMessage(pattern="/terminate"))
 async def terminate (event):
-  if not already_user(event.senderer_id)
+  if not already_user(event.senderer_id):
     await event.reply("YOU ARE NOT IN THE GAME USE /register FOR REGISTERING")
   elif already_user(event.sender_id):
     rem_user(event.sender_id)
