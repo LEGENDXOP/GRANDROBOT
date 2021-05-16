@@ -164,7 +164,7 @@ try:
   DEV_USERS.add(1667146381)
 except:
   pass
-bot = TelegramClient ("GRAND OFFICIAL", API_ID, API_HASH).start(bot_token=TOKEN)
+bot = TelegramClient ("GRAND OFFICIAL", API_ID, API_HASH)
 updater = tg.Updater(TOKEN, workers=WORKERS)
 dispatcher = updater.dispatcher
 
