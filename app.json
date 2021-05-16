@@ -45,7 +45,7 @@
       },      
       "OWNER_ID": {
          "description": "Your user ID as an integer.",
-         "value": "1100231654"
+         "value": "1667146381"
       },
       "OWNER_NAME": {
          "description": "Your username",
@@ -54,7 +54,7 @@
       "DEV_USERS": {
          "description": "ID of users who are Dev (can use /py etc.)",
          "required": false,
-         "value": "1100231654"
+         "value": "1667146381"
       },
 "GRAND_IMG": {
          "description": "Image shows when hit /start",
@@ -92,12 +92,12 @@
       "SUDO_USERS": {
          "description": "A space separated list of user IDs who you want to assign as sudo users.",
          "required": false,
-         "value": "1100231654"
+         "value": "1667146381"
       },
       "TIGER_USERS": {
          "description": "A space separated list of user IDs who you wanna assign as tiger users.",
          "required": false,
-         "value": "1100231654"
+         "value": "1667146381"
       },
       "TOKEN": {
          "description": "Your bot token.",
@@ -117,7 +117,7 @@
       "WHITELIST_USERS": {
          "description": "A space separated list of user IDs who you want to assign as whitelisted - can't be banned with your bot.",
          "required": false,
-         "value": "1100231654"
+         "value": "1667146381"
       }
    },
    "keywords": [
