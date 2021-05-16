@@ -14,7 +14,11 @@ def all_users():
   return list(pros["user"])
 def already_user(id):
   k = data.find_one({"_id": "LEGENDX22"})
-  if id in list(k["user"]):
-    return True
+  if k:
+    kek = list(k.get("user"))
+    if id in kek:
+      return True
+    else:
+      return False
   else:
     return False
