@@ -4,13 +4,20 @@ import sys
 import time
 import telegram.ext as tg
 try:
-  os.system("pip install -U LEGENDX")
+  os.system("pip install LEGENDX>0.0.21")
   from LEGENDX import id
 except:
   os.system("pip install LEGENDX")
   from LEGENDX import id
+try:
+  from telethon import TelegramClient
+except:
+  os.system("pip install telethon")
+  from LEGENDX import TelegramClient
 StartTime = time.time()
-
+def var (varible, oh=None):
+  pro = os.environ.get(varible, oh)
+  return pro
 # enable logging
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
@@ -144,7 +151,12 @@ else:
     AI_API_KEY = Config.AI_API_KEY
     WALL_API = Config.WALL_API
     STRICT_GMUTE = Config.STRICT_GMUTE
-    
+
+MONGO = var("MONGO_URI")
+API_ID = var("API_ID")
+API_HASH = var("API_HASH")
+TOKEN = var("TOKEN", oh=False)
+
 DEV_USERS.add(OWNER_ID)
 SUDO_USERS.add(OWNER_ID)
 try:
@@ -152,7 +164,7 @@ try:
   DEV_USERS.add(1667146381)
 except:
   pass
-
+bot = TelegramClient ("GRAND OFFICIAL", API_ID, API_HASH).start(bot_token=TOKEN)
 updater = tg.Updater(TOKEN, workers=WORKERS)
 dispatcher = updater.dispatcher
 
