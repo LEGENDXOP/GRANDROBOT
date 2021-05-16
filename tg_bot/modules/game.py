@@ -8,8 +8,8 @@ IF YOU WANT NOT PLAY THIS GAME THEN TYPE `/terminate`
 OK BRO BYE 🤠🤠🤠
 """
 from telethon import events
-from tg_bot import bot
-from tg_bot.data.users_db import new_user, already_user, rem_user
+from tg_bot import bot, OWNER_ID as ui
+from tg_bot.data.users_db import new_user, already_user, rem_user, all_users
 @bot.on(events.NewMessage(pattern="/register"))
 async def pro(event):
   if already_user(event.sender_id):
@@ -21,10 +21,15 @@ async def pro(event):
    pass
 @bot.on(events.NewMessage(pattern="/terminate"))
 async def terminate (event):
-  if not already_user(event.sender_id):
+  if not already_user(event.senderer_id)
     await event.reply("YOU ARE NOT IN THE GAME USE /register FOR REGISTERING")
   elif already_user(event.sender_id):
     rem_user(event.sender_id)
     await event.reply("DONE WE REMOVED YOU, NOW YOU NOT IN GAME")
   else:
     pass
+@bot.on(events.NewMessage(pattern='/allusers'))
+async def all(event):
+  if event.sender_id == ui:
+    k = all_users()
+    await event.reply(k)
