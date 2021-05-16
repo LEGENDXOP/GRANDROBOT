@@ -8,6 +8,7 @@ IF YOU WANT NOT PLAY THIS GAME THEN TYPE `/terminate`
 OK BRO BYE 🤠🤠🤠
 """
 from telethon import events
+from tg_bot import bot
 from tg_bot.data.users_db import new_user, already_user, rem_user
 @bot.on(events.NewMessage(pattern="/register"))
 async def pro(event):
