@@ -13,6 +13,18 @@
          "description": "Set this to True if you want ! to be a command prefix along with /",
          "value": "True"
       },
+      "API_ID": {
+         "description": "Enter your api id",
+         "value": ""
+      },
+      "API_HASH": {
+         "description": "Enter your Api Hash",
+         "value": ""
+      },
+      "MONGO_URI": {
+         "description": "Enter your Mongo Url",
+         "value": ""
+      },
       "BAN_STICKER": {
          "description": "ID of the sticker you want to use when banning people.",
          "required": false,
