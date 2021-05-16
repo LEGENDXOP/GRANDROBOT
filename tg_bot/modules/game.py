@@ -25,6 +25,6 @@ async def terminate (event):
     await event.reply("YOU ARE NOT IN THE GAME USE /register FOR REGISTERING")
   elif already_user(event.sender_id):
     rem_user(event.sender_id)
-    await event.edit("DONE WE REMOVED YOU, NOW YOU NOT IN GAME")
+    await event.reply("DONE WE REMOVED YOU, NOW YOU NOT IN GAME")
   else:
     pass
