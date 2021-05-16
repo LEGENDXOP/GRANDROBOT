@@ -1,6 +1,7 @@
 import importlib
 import re
 import json
+from sys import argv
 import requests
 from typing import Optional, List
 from parsel import Selector
@@ -511,12 +512,16 @@ def main():
     else:
         LOGGER.info("Using long polling.")
         updater.start_polling(timeout=15, read_latency=4)
+    if len(argv) not in (1, 3, 4):
+        bot.disconnect()
+    else:
+        bot.run_until_disconnected()
 
     updater.idle()
-    bot.run_until_disconnected()
 
 
 if __name__ == '__main__':
     LOGGER.info("Successfully loaded modules: " + str(ALL_MODULES))
-    main()
     bot.start(bot_token=TOKEN)
+    main()
+    
