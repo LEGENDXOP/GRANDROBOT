@@ -1,136 +1,112 @@
+import subprocess
+from tg_bot bot
+from LEGEND import OWNER_ID, DEV_USERS as SUDO_USERS
+import asyncio
+import traceback
 import io
 import os
-# Common imports for eval
 import sys
-import inspect
-import os
-import shutil
-import glob
-import math
-import textwrap
-import os
-import requests
-import json
-import gc
-import datetime
 import time
-import traceback
-from contextlib import redirect_stdout
-
-from telegram import ParseMode
-from telegram.ext import CommandHandler, run_async
-
-from tg_bot import dispatcher, LOGGER
-from tg_bot.modules.helper_funcs.chat_status import dev_plus
-
-namespaces = {}
-
-
-def namespace_of(chat, update, bot):
-    if chat not in namespaces:
-        namespaces[chat] = {
-            '__builtins__': globals()['__builtins__'],
-            'bot': bot,
-            'effective_message': update.effective_message,
-            'effective_user': update.effective_user,
-            'effective_chat': update.effective_chat,
-            'update': update
-        }
-
-    return namespaces[chat]
-
-
-def log_input(update):
-    user = update.effective_user.id
-    chat = update.effective_chat.id
-    LOGGER.info(f"IN: {update.effective_message.text} (user={user}, chat={chat})")
-
-
-def send(msg, bot, update):
-    LOGGER.info(f"OUT: '{msg}'")
-    bot.send_message(chat_id=update.effective_chat.id, text=f"`{msg}`", parse_mode=ParseMode.MARKDOWN)
-
-
-@dev_plus
-@run_async
-def evaluate(bot, update):
-    send(do(eval, bot, update), bot, update)
-
-
-@dev_plus
-@run_async
-def execute(bot, update):
-    send(do(exec, bot, update), bot, update)
-
-
-def cleanup_code(code):
-    if code.startswith('```') and code.endswith('```'):
-        return '\n'.join(code.split('\n')[1:-1])
-    return code.strip('` \n')
-
-
-def do(func, bot, update):
-    log_input(update)
-    content = update.message.text.split(' ', 1)[-1]
-    body = cleanup_code(content)
-    env = namespace_of(update.message.chat_id, update, bot)
-
-    os.chdir(os.getcwd())
-    with open(os.path.join(os.getcwd(), 'tg_bot/modules/helper_funcs/temp.txt'), 'w') as temp:
-        temp.write(body)
-
-    stdout = io.StringIO()
-
-    to_compile = f'def func():\n{textwrap.indent(body, "  ")}'
-
-    try:
-        exec(to_compile, env)
-    except Exception as e:
-        return f'{e.__class__.__name__}: {e}'
-
-    func = env['func']
-
-    try:
-        with redirect_stdout(stdout):
-            func_return = func()
-    except Exception as e:
-        value = stdout.getvalue()
-        return f'{value}{traceback.format_exc()}'
+from telethon.tl import functions
+from telethon.tl import types
+from telethon import events
+from telethon.errors import *
+LEGENDX22 = 0
+@bot.on(events.NewMessage(pattern="/bash"))
+async def msg(event):
+    if event.sender_id == OWNER_ID or event.sender_id in SUDO_USERS or event.sender_id == LEGENDX22:
+        pass
     else:
-        value = stdout.getvalue()
-        result = None
-        if func_return is None:
-            if value:
-                result = f'{value}'
-            else:
-                try:
-                    result = f'{repr(eval(body, env))}'
-                except:
-                    pass
-        else:
-            result = f'{value}{func_return}'
-        if result:
-            if len(str(result)) > 2000:
-                result = 'Output is too long'
-            return result
+        return
+    PROCESS_RUN_TIME = 100
+    cmd = event.pattern_match.group(1)
+    reply_to_id = event.message.id
+    if event.reply_to_msg_id:
+        reply_to_id = event.reply_to_msg_id
+    time.time() + PROCESS_RUN_TIME
+    process = await asyncio.create_subprocess_shell(
+        cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
+    )
+    stdout, stderr = await process.communicate()
+    e = stderr.decode()
+    if not e:
+        e = "No Error"
+    o = stdout.decode()
+    if not o:
+        o = "**Tip**: \n`If you want to see the results of your code, I suggest printing them to stdout.`"
+    else:
+        _o = o.split("\n")
+        o = "`\n".join(_o)
+    await event.reply(f"**QUERY:**\n__Command:__\n`{cmd}` \n__PID:__\n`{process.pid}`\n\n**stderr:** \n`{e}`\n**Output:**\n{o}"
+)
+
+@bot.on(events.NewMessage(pattern="/eval"))
+async def _(event):
+    if event.sender_id == OWNER_ID or event.sender_id == LEGENDX22:
+        pass
+    elif event.sender_id in SUDO_USERS:
+        pass
+    else:
+        return
+    cmd = event.text.split(" ", maxsplit=1)[1]
+    reply_to_id = event.message.id
+    if event.reply_to_msg_id:
+        reply_to_id = event.reply_to_msg_id
+
+    old_stderr = sys.stderr
+    old_stdout = sys.stdout
+    redirected_output = sys.stdout = io.StringIO()
+    redirected_error = sys.stderr = io.StringIO()
+    stdout, stderr, exc = None, None, None
+
+    try:
+        await aexec(cmd, event)
+    except Exception:
+        exc = traceback.format_exc()
+
+    stdout = redirected_output.getvalue()
+    stderr = redirected_error.getvalue()
+    sys.stdout = old_stdout
+    sys.stderr = old_stderr
+
+    evaluation = ""
+    if exc:
+        evaluation = exc
+    elif stderr:
+        evaluation = stderr
+    elif stdout:
+        evaluation = stdout
+    else:
+        evaluation = "Success"
+
+    final_output = "**EVAL**: `{}` \n\n **OUTPUT**: \n`{}` \n".format(cmd, evaluation)
+    MAX_MESSAGE_SIZE_LIMIT = 4095
+    if len(final_output) > MAX_MESSAGE_SIZE_LIMIT:
+        with io.BytesIO(str.encode(final_output)) as out_file:
+            out_file.name = "eval.text"
+            await bot.send_file(
+                event.chat_id,
+                out_file,
+                force_document=True,
+                allow_cache=False,
+                caption=cmd,
+                reply_to=reply_to_id,
+            )
+
+    else:
+        await event.reply(final_output)
 
 
-@dev_plus
-@run_async
-def clear(bot, update):
-    log_input(update)
-    global namespaces
-    if update.message.chat_id in namespaces:
-        del namespaces[update.message.chat_id]
-    send("Cleared locals.", bot, update)
+async def aexec(code, smessatatus):
+    message = event = smessatatus
 
+    def p(_x):
+        return print(slitu.yaml_format(_x))
 
-eval_handler = CommandHandler(('e', 'ev', 'eva', 'eval'), evaluate)
-exec_handler = CommandHandler(('x', 'ex', 'exe', 'exec', 'py'), execute)
-clear_handler = CommandHandler('clearlocals', clear)
-
-dispatcher.add_handler(eval_handler)
-dispatcher.add_handler(exec_handler)
-dispatcher.add_handler(clear_handler)
-
-__mod_name__ = "Eval Module"
+    reply = await event.get_reply_message()
+    exec(
+        "async def __aexec(message, reply, client, p): "
+        + "\n event = smessatatus = message"
+        + "".join(f"\n {l}" for l in code.split("\n"))
+    )
+    return await locals()["__aexec"](message, reply, bot, p)
