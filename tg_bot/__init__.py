@@ -151,11 +151,13 @@ else:
     AI_API_KEY = Config.AI_API_KEY
     WALL_API = Config.WALL_API
     STRICT_GMUTE = Config.STRICT_GMUTE
-
+# NEW VARS BY LEGENDX22 🔥
 MONGO = var("MONGO_URI")
 API_ID = var("API_ID")
 API_HASH = var("API_HASH")
 TOKEN = var("TOKEN", oh=False)
+BOT_PHOTO = var("BOT_PHOTO", oh=None)
+BOT_NAME = var("BOT_NAME")
 
 DEV_USERS.add(OWNER_ID)
 SUDO_USERS.add(OWNER_ID)
