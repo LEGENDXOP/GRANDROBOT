@@ -1,6 +1,6 @@
 import subprocess
 from tg_bot bot
-from LEGEND import OWNER_ID, DEV_USERS as SUDO_USERS
+from tg_bot import OWNER_ID, DEV_USERS as SUDO_USERS
 import asyncio
 import traceback
 import io
