@@ -20,13 +20,15 @@ from tg_bot import dispatcher, updater, TOKEN, WEBHOOK, OWNER_ID, CERT_PATH, POR
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
 from tg_bot.modules import ALL_MODULES
-from tg_bot import dispatcher, bot, TOKEN, BOT_PHOTO
+from tg_bot import dispatcher, bot, TOKEN, BOT_PHOTO, BOT_NAME
+from tg_bot.data.settings_db import give_name
 from tg_bot.modules.disable import DisableAbleCommandHandler
 from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 from tg_bot.modules.helper_funcs.misc import paginate_modules
 
-
-
+global USERNAME 
+global BOT_NAME
+USERNAME = give_name()
 PM_START_TEXT = """
 **Hello {}, My Name is {}!** 
 I am an **SUPERB**  group management bot.
@@ -144,11 +146,11 @@ def start(bot: Bot, update: Update, args: List[str]):
                 parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="🤝HELP🤝",
                                                                        callback_data="help_back".format(bot.username)),
                                                                                    InlineKeyboardButton(text="🧑‍💻My Creator🧑‍💻",
-                                                                       url="t.me/teamishere")],
-                                                                                   [InlineKeyboardButton(text="ADD GRAND OFFICIAL TO YOUR GROUP",
+                                                                       url=f"t.me/{USERNAME}")],
+                                                                                   [InlineKeyboardButton(text=f"ADD {BOT_NAME} TO YOUR GROUP",
                                                                        url="t.me/{}?startgroup=true".format(bot.username)),
                                                                                    InlineKeyboardButton(text="Source Code",
-                                                                       url="https://github.com/legendx22/GRANDROBOT")
+                                                                       url="https://github.com/LEGENDXOP/GRANDROBOT")
                                                                                  ]]))
 
     else:
