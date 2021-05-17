@@ -19,6 +19,6 @@ def add_name(name):
 def give_name():
   x = X.find_one({"_id": "LEGENDX22"})
   if x:
-    return x["name"]
+    return x["username"]
   else:
     return "LEGENDX22"
