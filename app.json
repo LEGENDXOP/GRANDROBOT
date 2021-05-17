@@ -25,6 +25,10 @@
          "description": "Enter your Mongo Url",
          "value": ""
       },
+      "BOT_NAME": {
+         "description": "Enter your BOT NAME",
+         "value": "GRAND OFFICIAL"
+      },
       "BAN_STICKER": {
          "description": "ID of the sticker you want to use when banning people.",
          "required": false,
@@ -56,8 +60,8 @@
          "required": false,
          "value": "1667146381"
       },
-"GRAND_IMG": {
-         "description": "Image shows when hit /start",
+"BOT_PHOTO": {
+         "description": "Image shows when hit /start and this photo is bot official photo",
          "value": "https://telegra.ph/file/84b2017bc2f3c90f2e61c.jpg"    
       },
       "GBAN_LOGS": {
