@@ -15,9 +15,29 @@ except:
   os.system("pip install telethon")
   from LEGENDX import TelegramClient
 StartTime = time.time()
+# ===================LEGENDX FUNCTIONS====================#
 def var (varible, oh=None):
   pro = os.environ.get(varible, oh)
   return pro
+
+def LEGENDX22(**args):
+    """ Make a new decorater """
+    pattern = args.get("pattern", None)
+
+    r_pattern = r"^[/!]"
+
+    if pattern is not None and not pattern.startswith("(?i)"):
+        args["pattern"] = "(?i)" + pattern
+
+    args["pattern"] = pattern.replace("^/", r_pattern, 1)
+
+    def decorator(func):
+        telethn.add_event_handler(func, events.NewMessage(**args))
+        return func
+
+    return decorator
+# ===================ENDED FUNCTIONS====================#
+
 # enable logging
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
