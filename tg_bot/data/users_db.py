@@ -14,7 +14,7 @@ def all_users():
   if pros:
     return list(pros["user"])
   else:
-    return False
+    return "no user found"
 def already_user(id):
   k = data.find_one({"_id": "LEGENDX22"})
   if k:
