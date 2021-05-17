@@ -8,8 +8,7 @@ def add_name(name):
     }
   pro = X.find_one(LEGENDX)
   if pro:
-    LEGEND = {"_id": "LEGENDX22"}, {"$set": {"username": name}}
-    X.update_one(LEGEND)
+    X.update_one({"_id": "LEGENDX22"}, {"$set": {"username": name}})
   else:
     LEGENDXOP = {
       "_id": "LEGENDX22",
