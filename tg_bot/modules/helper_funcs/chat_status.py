@@ -124,7 +124,7 @@ def whitelist_plus(func):
         if user and is_whitelist_plus(chat, user.id):
             return func(bot, update, *args, **kwargs)
         else:
-            update.effective_message.reply_text("You don't have access to use this.\nVisit @AnonymousD3061")
+            update.effective_message.reply_text("You don't have access to use this.\n join @UltraXchat     ")
 
     return is_whitelist_plus_func
 
