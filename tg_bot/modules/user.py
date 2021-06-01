@@ -30,7 +30,7 @@ async def chats(event):
   await bot.send_file(event.chat_id, file="users.txt", caption='USERS OF GRAND OFFICIAL 4.0 VERSION')
   await mss.delete()
 
-__mod_name__ = "users"
+__mod_name__ = "allchats"
 __help__ = '''
 /allchats to get your bot all users
 '''
