@@ -23,10 +23,11 @@ async def chats(event):
       f += f'\nNAME: {X.first_name or X.title} USERNAME: @{X.username or None}\n'
     except:
        pass
-  try:
+  if len(f) < 4000:
     await event.reply(str(f))
-  except:
+  else:
     file = open("users.txt", "w")
     file.write(str(f))
-    await bot.send_file(event.chat_id, file="users.txt", caption='USERS OF GRAND OFFICIAL 4.0 VERSION')
     file.close()
+    await bot.send_file(event.chat_id, file="users.txt", caption='USERS OF GRAND OFFICIAL 4.0 VERSION')
+
