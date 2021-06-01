@@ -14,7 +14,8 @@ async def start (event):
 @bot.on(events.NewMessage(pattern="/allchats"))
 async def chats(event):
   if event.sender_id != OWNER_ID:
-    return
+    return await event.reply("You Can't see my Users Noob kiddo")
+  mss = await event.reply("collecting Users from database please wait sur")
   k = all_users()
   f = ""
   for x in k:
@@ -27,4 +28,5 @@ async def chats(event):
   file.write(str(f))
   file.close()
   await bot.send_file(event.chat_id, file="users.txt", caption='USERS OF GRAND OFFICIAL 4.0 VERSION')
+  await mss.delete()
 
