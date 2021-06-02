@@ -18,3 +18,7 @@ async def br(event):
   await event.reply("DONE MSG IS BROADCASTED \n\nYOUR MSG IN NEXT LINE \n\n{}".format(text))
   print (f"SUCCESS ON BROADCASTING MSGS IN CHATS : {i-I}")
      
+__mod_name__ = "Broadcasted"
+__help__ = """
+/broadcast msg
+"""
