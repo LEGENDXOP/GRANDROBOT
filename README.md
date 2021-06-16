@@ -5,7 +5,7 @@ DEPLOY HERE - [GRAND OFFICIAL](https://dashboard.heroku.com/new?button-url=https
 Credits - [LEGEND X](https://t.me/legendx22)
 
 # TELEGRAM
-Check me on [TELEGRAM](https://t.me/grand50_bot)
+Check me on [TELEGRAM](https://t.me/pyratesX_robot)
 # TUTORIAL [OFFICIAL VIDEO](https://youtu.be/JK9cLTDZUR0)
 
 <details>
