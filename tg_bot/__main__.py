@@ -146,8 +146,7 @@ def start(bot: Bot, update: Update, args: List[str]):
                         [
                             InlineKeyboardButton(
                                 text="☑️ Add Saitama to your group",
-                                url="t.me/{}?startgroup=true".format(
-                                    context.bot.username
+                                callback_data="help_back".format(bot.username
                                 ),
                             )
                         ],
