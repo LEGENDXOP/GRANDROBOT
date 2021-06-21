@@ -26,15 +26,17 @@ from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 
 PM_START_TEXT = """
-**Hello {}, My Name is {}!** 
-I am an **SUPERB🥰😎**  group management bot.
-You can find the list of available commands with /help.
-
+Hi {}, my name is {}! 
+I am a Pokémon also group management bot.
+Build by likuCs using Py, I specialize in managing anime and similar themed groups.
+You can find my list of available commands with /help.
 """
 
 HELP_STRINGS = """
 
-Hello! my name *{}*.
+Hey there! My name is *{}*.
+I'm a Pikachu For Fun and help admins manage their groups with One Punch! Have a look at the following for an idea of some of \
+the things I can help you with.
 
 *Main* commands available:
  - /start: start the bot
@@ -49,7 +51,7 @@ Hello! my name *{}*.
 And the following:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-TECHNO_IMG = "https://telegra.ph/file/43c18e80a1c82bae9a87c.jpg"
+TECHNO_IMG = "https://telegra.ph/file/f7fd60d8850d06e3ad610.jpg"
 IMPORTED = {}
 MIGRATEABLE = []
 HELPABLE = {}
@@ -139,16 +141,41 @@ def start(bot: Bot, update: Update, args: List[str]):
             update.effective_message.reply_photo(
                 TECHNO_IMG,
                 PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
-                parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="🤝HELP🤝",
-                                                                       callback_data="help_back".format(bot.username)),
-                                                                                   InlineKeyboardButton(text="🧑‍💻My Creator🧑‍💻",
-                                                                       url="t.me/iAmLiKu1")],
-                                                                                   [InlineKeyboardButton(text="ADD CS HOWL TO YOUR GROUP",
-                                                                       url="t.me/{}?startgroup=true".format(bot.username)),
-                                                                                   InlineKeyboardButton(text="INSTAGRAM",
-                                                                       url="https://instagram.com/liku__cs?igshid=1xf55n1t3okg1")
-                                                                                 ]]))
-
+                parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton(
+                                text="☑️ Add Saitama to your group",
+                                url="t.me/{}?startgroup=true".format(
+                                    context.bot.username
+                                ),
+                            )
+                        ],
+                        [
+                            InlineKeyboardButton(
+                                text="🚑 Support Group",
+                                url=f"https://t.me/discuss_group_cs",
+                            ),
+                            InlineKeyboardButton(
+                                text="🔔 Updates Channel",
+                                url="https://t.me/mod_apk_premium_cs",
+                            ),
+                        ],
+                        [
+                            InlineKeyboardButton(
+                                text="🧾 Getting started guide",
+                                url="https://t.me/discuss_group_cs/62",
+                            )
+                        ],
+                        [
+                            InlineKeyboardButton(
+                                text="🗄 Source code",
+                                url="https://github.com/likucs/SaitamaRobot",
+                            )
+                        ],
+                    ]
+                ),
+            )
     else:
         update.effective_message.reply_text("ZINDA HUN BHAI !!😎✓")
 
