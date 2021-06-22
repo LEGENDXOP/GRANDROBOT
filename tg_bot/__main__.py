@@ -28,14 +28,14 @@ from tg_bot.modules.helper_funcs.misc import paginate_modules
 PM_START_TEXT = """
 Hi {}, my name is {}! 
 I am a Pokémon also group management bot.
-Build by likuCs using Py, I specialize in managing anime and similar themed groups.
+Build by @iAmLiKu1 using Py, I specialize in managing anime and similar themed groups.
 You can find my list of available commands with /help.
 """
 
 HELP_STRINGS = """
 
 Hey there! My name is *{}*.
-I'm a Pikachu For Fun and help admins manage their groups with One Punch! Have a look at the following for an idea of some of \
+I'm a Pikachu For Fun and help admins manage their groups with One Command! Have a look at the following for an idea of some of \
 the things I can help you with.
 
 *Main* commands available:
@@ -169,7 +169,7 @@ def start(bot: Bot, update: Update, args: List[str]):
                         [
                             InlineKeyboardButton(
                                 text="👑 My Master",
-                                url="https://t.me/@iAmLiKu1",
+                                url="https://t.me/iAmLiKu1",
                             )
                         ],
                     ]
