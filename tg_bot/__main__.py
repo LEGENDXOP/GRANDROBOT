@@ -145,7 +145,7 @@ def start(bot: Bot, update: Update, args: List[str]):
                     [
                         [
                             InlineKeyboardButton(
-                                text="☑️ Add Saitama to your group",
+                                text="☑️ Add ⚡P I K A C H U⚡ to your group",
                                 callback_data="help_back".format(bot.username
                                 ),
                             )
@@ -168,15 +168,15 @@ def start(bot: Bot, update: Update, args: List[str]):
                         ],
                         [
                             InlineKeyboardButton(
-                                text="🗄 Source code",
-                                url="https://github.com/likucs/SaitamaRobot",
+                                text="👑 My Master",
+                                url="https://t.me/@iAmLiKu1",
                             )
                         ],
                     ]
                 ),
             )
     else:
-        update.effective_message.reply_text("ZINDA HUN BHAI !!😎✓")
+        update.effective_message.reply_text("ZINDA HUN MASTER !!😎✓")
 
 
 def send_start(bot, update):
