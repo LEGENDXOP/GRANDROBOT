@@ -19,7 +19,7 @@ Now send the bot /start, If it doesn't respond go to https://dashboard.heroku.co
 Credits - [DROOPYXX](https://t.me/Droopyxx)
 
 # TELEGRAM
-Check me on [TELEGRAM](https://t.me/NicerManageBot)
+Check me on [TELEGRAM](https://t.me/NiserManageBot)
 # CHANNEL
 Check my [CHANNEL](https://t.me/Droopys_channel)
 
