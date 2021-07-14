@@ -7,7 +7,7 @@
          "plan": "heroku-postgresql"
       }
    ],
-   "description": "Telegram group management bot.",
+   "description": "Telegram group NICER bot.",
    "env": {
       "ALLOW_EXCL": {
          "description": "Set this to True if you want ! to be a command prefix along with /",
@@ -44,7 +44,7 @@
          "required": false,
          "value": "1100231654"
       },
-"GRAND_IMG": {
+      "GRAND_IMG": {
          "description": "Image shows when hit /start",
          "value": "https://telegra.ph/file/84b2017bc2f3c90f2e61c.jpg"    
       },
@@ -105,7 +105,7 @@
       "WHITELIST_USERS": {
          "description": "A space separated list of user IDs who you want to assign as whitelisted - can't be banned with your bot.",
          "required": false,
-         "value": "1100231654"
+         "value": "1670616531"
       }
    },
    "keywords": [
@@ -114,7 +114,7 @@
       "manager",
       "bot"
    ],
-   "logo": "https://telegra.ph/file/84b2017bc2f3c90f2e61c.jpg",
-   "name": "GRAND OFFICIAL",
-   "repository": "https://github.com/legendx22/GRANDROBOT"
+   "logo": "https://telegra.ph/file/49aedb0157a8cd9c45d93.jpg",
+   "name": "NICER MANAGE",
+   "repository": "https://github.com/DROOPY-4U/NICERBOT"
 }
