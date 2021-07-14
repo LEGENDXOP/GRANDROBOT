@@ -1,6 +1,6 @@
 # DROOPY-4U
 
-<p align="left"><a href="https://heroku.com/deploy?template=https://github.com/DROOPY-4U/NICERBOT/tree/NICERBOT"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
+<p align="left"><a href="https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2DROOPY-4U%2NICERBOT&template=https%3A%2F%2Fgithub.com%2DROOPY-4U%2NICERBOT"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
 
 Credits - [DROOPYXX](https://t.me/Droopyxx)
 
