@@ -1,7 +1,6 @@
 # DROOPY-4U
 
-DEPLOY HERE - [NICER](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Flegendx22%2FGRANDROBOT&template=https%3A%2F%2Fgithub.com%2Flegendx22%2FGRANDROBOT)
-[.](https://heroku.com/deploy)
+<p align="left"><a href="https://github.com/DROOPY-4U/NICERBOT/tree/main"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
 
 Credits - [DROOPYXX](https://t.me/Droopyxx)
 
