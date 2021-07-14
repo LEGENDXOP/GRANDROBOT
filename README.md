@@ -1,5 +1,5 @@
 # DROOPY-4U
-
+Step deploy! ⬇
   <summary>Steps to deploy on Heroku !! </summary>
 
 ```
@@ -16,13 +16,12 @@ Now send the bot /start, If it doesn't respond go to https://dashboard.heroku.co
 </details>  
 <details>
 
-
-
 Credits - [DROOPYXX](https://t.me/Droopyxx)
 
 # TELEGRAM
-Check me on [TELEGRAM](https://t.me/grand50_bot)
-# TUTORIAL [OFFICIAL VIDEO](https://youtu.be/JK9cLTDZUR0)
+Check me on [TELEGRAM](https://t.me/NicerManageBot)
+# CHANNEL
+Check my [CHANNEL](https://t.me/Droopys_channel)
 
 <details>
 <summary> CREDITS </summary>
