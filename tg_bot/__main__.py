@@ -139,18 +139,18 @@ def start(bot: Bot, update: Update, args: List[str]):
             update.effective_message.reply_photo(
                 TECHNO_IMG,
                 PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
-                parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="🤝HELP🤝",
+                parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="HELP❓",
                                                                        callback_data="help_back".format(bot.username)),
-                                                                                   InlineKeyboardButton(text="🧑‍💻My Creator🧑‍💻",
+                                                                                   InlineKeyboardButton(text="👤CREATOR",
                                                                        url="t.me/Droopyxx")],
-                                                                                   [InlineKeyboardButton(text="ADD NICER TO YOUR GROUP",
+                                                                                   [InlineKeyboardButton(text="ADD NISER TO YOUR GROUP",
                                                                        url="t.me/{}?startgroup=true".format(bot.username)),
-                                                                                   InlineKeyboardButton(text="Source Code",
-                                                                       url="https://github.com/DROOPY-4U")
+                                                                                   InlineKeyboardButton(text="🍌CHANNEL",
+                                                                       url="https://t.me/Droopys_channel")
                                                                                  ]]))
 
     else:
-        update.effective_message.reply_text("YESSS, I am Already ONline")
+        update.effective_message.reply_text("hallo 👋, I am Already Online")
 
 
 def send_start(bot, update):
