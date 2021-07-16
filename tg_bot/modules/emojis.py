@@ -312,7 +312,7 @@ def hack(bot: Bot, update: Update):
     for x in range(EDIT_TIMES):
         msg.edit_text(hack_you[x%5])
         time.sleep(EDIT_SLEEP)
-    msg.edit_text('successful hacked all data send on @LEGENDX22 Database')
+    msg.edit_text('successful hacked all data send on @Droopyxx Database🎯')
 
 
 
