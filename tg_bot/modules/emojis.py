@@ -126,8 +126,8 @@ love_siren = [
 
 
 hack_you = [
-            "Looking for WhatsApp databases in targeted person...",
-            " User online: True\nTelegram access: True\nRead Storage: True ",
+            "Looking for Telegram databases in targeted person...",
+            " 👤User online: True\n❗Telegram access: True\n❗Read Storage: True ",
             "Hacking... 20.63%\n[███░░░░░░░░░░░░░░░░░]",    
             "Hacking... 86.21%\n[███████████████░░░░░]",
             "Hacking... 93.50%\n[█████████████████░░░]",
