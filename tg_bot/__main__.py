@@ -26,17 +26,19 @@ from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 
 PM_START_TEXT = """
-Hello *{}*. My Name is *{}*! 
-I am an *NISER* Group management bot.
+Hello *{}*👋. My Name is *{}*! 
+I am an *NISER* management bot.
+➖➖➖➖➖➖➖➖➖➖➖➖➖➖
 🇮🇩 `Languages` : *python* 🐍
 ⚒️ `Worker` : heroku.com ⚒️
+➖➖➖➖➖➖➖➖➖➖➖➖➖➖
 You can find the list of available commands with /help.
 
 """
 
 HELP_STRINGS = """
 
-Hello! my name *{}*.
+Hello!👋 my name *{}*.
 
 *Main* commands available:
  - /start: start the bot
@@ -49,7 +51,7 @@ Hello! my name *{}*.
 
 {}
 And the following:
-""".format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
+""".format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with "/" or "!".\n")
 
 TECHNO_IMG = "https://telegra.ph/file/49aedb0157a8cd9c45d93.jpg"
 IMPORTED = {}
