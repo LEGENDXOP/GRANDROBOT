@@ -29,8 +29,8 @@ PM_START_TEXT = """
 Hello *{}*👋. My Name is *{}*! 
 I am an *NISER* management bot.
 ➖➖➖➖➖➖➖➖➖➖➖➖➖➖
-🇮🇩┌LANGUAGES : *Python*
-⚒️└WORKER : heroku.com ⚒️
+🇮🇩LANGUAGES : *Python*
+⚒️WORKER : heroku.com ⚒️
 ➖➖➖➖➖➖➖➖➖➖➖➖➖➖
 `if you want to donate some crypto`. PM : @DonateV1_Bot
 You can find the list of available commands with /help.
