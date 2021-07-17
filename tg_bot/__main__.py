@@ -51,7 +51,7 @@ Hello!👋 my name *{}*.
 
 {}
 And the following:
-""".format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with "/" or "!".\n")
+""".format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
 TECHNO_IMG = "https://telegra.ph/file/49aedb0157a8cd9c45d93.jpg"
 IMPORTED = {}
